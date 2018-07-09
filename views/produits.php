@@ -15,25 +15,33 @@ echo '<div class="card">';
 
 echo '<h5 class="card-title">'; echo $produit["Titre"]; '</h5>';
 
+$jsonProd = json_encode($produit);
+
 echo '<table>
-	<tr>
-			<th> Sur </th>
-			<th> Sortie </th>
-			<th> En Stock </th>
-			<th> Prix </th>
-			<th> PEGI </th>
-		</tr>
-		<tr>
-			<td>'; echo $produit["nom_console"]; echo'</td>
-			<td>'; echo $produit["annee_de_sortie"]; echo'</td>
-			<td>'; echo $produit["stock"]; echo'</td>
-			<td>'; echo $produit["prix"]; echo'</td>
-			<td>'; echo $produit["id_pegi"]; echo'</td>
+			<tr>
+				<th> Sur </th>
+				<th> Sortie </th>
+				<th> En Stock </th>
+				<th> Prix </th>
+				<th> PEGI </th>
+			</tr>
+			<tr>
+				<td>'; echo $produit["nom_console"]; echo'</td>
+				<td>'; echo $produit["annee_de_sortie"]; echo'</td>
+				<td>'; echo $produit["stock"]; echo'</td>
+				<td>'; echo $produit["prix"]; echo'</td>
+				<td>'; echo $produit["id_pegi"]; echo'</td>
 
 
-		</tr>
-	 </table>';
- echo    '<a href="#" class="btn btn-primary">Ajouter Au Panier</a>
+			</tr>
+	 	</table>';
+ 		echo    '<a href="#" onclick="addToCart(\''.
+	 			$produit["nom_console"].'\','.'\''.
+	 			$produit["annee_de_sortie"].'\','.'\''.
+	 			$produit["stock"].'\','.'\''.
+	 			$produit["prix"].'\','.'\''.
+	 			$produit["id_pegi"].'\''
+ 			.')" class="btn btn-primary">Ajouter Au Panier</a>
   </div>
 </div>';
 
@@ -46,6 +54,7 @@ echo '<table>
 <?php
 require_once "views/footer.php";
 ?>
+<script src="/E-commerce/assets/cart.js"></script>
 </body>
 
 <?php  

@@ -170,6 +170,6 @@
 
 
 
-
+		<script src="/E-commerce/assets/panier.js"></script>
 
 		?>

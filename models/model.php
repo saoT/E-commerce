@@ -5,10 +5,10 @@ class Model{
 
 	private $user = "root";
 	//private $password= "simplonco";
-	private $password= "";
+	private $password= "root";
 	private $dbname= "site_jeux_videos";
 	private $host= "localhost";
-	private $port= 8088;
+	private $port= 8888;
 
 	public function connect(){
 		try{
